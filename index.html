@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title>Marked in the browser</title>
-  <script src="https://unpkg.com/petite-vue" defer init></script>
+  <script src="https://unpkg.com/petite-vue" async="false" init></script>
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
@@ -11,7 +11,7 @@
     <div id="content"></div>
     <div id="content2"></div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
+  <script defer>
       fetch('https://raw.githubusercontent.com/nilsreich/didactic-bassoon/main/README.md') 
     .then(response => response.text())
     .then(result => document.getElementById('content').innerHTML = marked.parse(result));
