@@ -8,6 +8,9 @@
   <div id="content"></div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
+      fetch('https://raw.githubusercontent.com/nilsreich/didactic-bassoon/main/README.md') 
+    .then(response => response.text())
+    .then(result => document.getElementById('content').innerHTML = marked(result));
     document.getElementById('content').innerHTML =
       marked.parse('# Marked in the browser\n\nRendered by **marked**.');
   </script>
