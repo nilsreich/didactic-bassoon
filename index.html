@@ -11,7 +11,7 @@
   <script>
       fetch('https://raw.githubusercontent.com/nilsreich/didactic-bassoon/main/README.md') 
     .then(response => response.text())
-    .then(result => document.getElementById('content').innerHTML = marked(result));
+    .then(result => document.getElementById('content').innerHTML = marked.parse(result));
     document.getElementById('content2').innerHTML =
       marked.parse('# Marked in the browser\n\nRendered by **marked**.');
   </script>
